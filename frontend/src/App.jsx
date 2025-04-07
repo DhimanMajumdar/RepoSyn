@@ -6,7 +6,7 @@ import Sidebar from "./components/Sidebar";
 import LikesPage from "./pages/LikesPage";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext";
-import SignupPage from "./pages/SignUpPage";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   const { authUser, loading } = useAuthContext();
@@ -26,7 +26,7 @@ function App() {
           />
           <Route
             path="/signup"
-            element={!authUser ? <SignupPage /> : <Navigate to={"/"} />}
+            element={!authUser ? <SignUpPage /> : <Navigate to={"/"} />}
           />
           <Route
             path="/explore"
