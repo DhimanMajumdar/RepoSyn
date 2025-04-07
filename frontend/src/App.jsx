@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import SignUpPage from "./pages/SignUpPage";
+import SignupPage from "./pages/SignUpPage";
 import ExplorePage from "./pages/ExplorePage";
 import Sidebar from "./components/Sidebar";
 import LikesPage from "./pages/LikesPage";
@@ -26,7 +26,7 @@ function App() {
           />
           <Route
             path="/signup"
-            element={!authUser ? <SignUpPage /> : <Navigate to={"/"} />}
+            element={!authUser ? <SignupPage /> : <Navigate to={"/"} />}
           />
           <Route
             path="/explore"

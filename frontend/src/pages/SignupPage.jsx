@@ -1,7 +1,7 @@
 import { FaGithub, FaUnlockAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const SignUpPage = () => {
+const SignupPage = () => {
   const handleLoginWithGithub = () => {
     window.open("/api/auth/github", "_self");
   };
@@ -45,4 +45,4 @@ const SignUpPage = () => {
     </div>
   );
 };
-export default SignUpPage;
+export default SignupPage;
