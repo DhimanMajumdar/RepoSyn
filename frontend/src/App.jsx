@@ -1,12 +1,12 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignUpPage";
 import ExplorePage from "./pages/ExplorePage";
 import Sidebar from "./components/Sidebar";
 import LikesPage from "./pages/LikesPage";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext";
+import SignupPage from "./pages/SignUpPage";
 
 function App() {
   const { authUser, loading } = useAuthContext();
