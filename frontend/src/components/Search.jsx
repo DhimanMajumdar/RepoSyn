@@ -1,13 +1,30 @@
 import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
+import toast from "react-hot-toast"; // ✅ Add this
 
 const Search = ({ onSearch }) => {
   const [username, setUsername] = useState("");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validate GitHub user
+    try {
+      const res = await fetch(`https://api.github.com/users/${username}`);
+      if (!res.ok) {
+        throw new Error("Invalid username");
+      }
+
+      onSearch(e, username);
+    } catch (error) {
+      toast.error("🚫 Invalid GitHub username. Try again!");
+    }
+  };
+
   return (
     <form
       className="max-w-xl mx-auto p-2"
-      onSubmit={(e) => onSearch(e, username)}
+      onSubmit={handleSubmit} // ✅ Use local handler
     >
       <label
         htmlFor="default-search"
@@ -24,7 +41,7 @@ const Search = ({ onSearch }) => {
           id="default-search"
           className="block w-full p-4 ps-10 text-sm rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 
 		hover:bg-gray-600/10 border border-gray-800 text-white focus:ring-blue-500 focus:border-blue-500 bg-transparent focus:bg-transparent "
-          placeholder="i.e. johndoe"
+          placeholder="i.e. viratkohli"
           required
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -39,4 +56,5 @@ const Search = ({ onSearch }) => {
     </form>
   );
 };
+
 export default Search;
