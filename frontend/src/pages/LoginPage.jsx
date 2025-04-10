@@ -11,7 +11,7 @@ const LoginPage = () => {
       >
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 className="text-xl font-bold  md:text-2xl text-center">
-            Login to your account
+            Welcome Back! 🚀
           </h1>
           <button
             type="button"
